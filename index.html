@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+</head>
+<body>
+
+<script>
+    // Задача 1
+    function getDayOfWeek(number) {
+        const days = ['Понеділок', 'Вівторок', 'Середа', 'Четвер', 'П\'ятниця', 'Субота', 'Неділя'];
+        return days[number - 1];
+    }
+    console.log(getDayOfWeek(5));
+
+    // Задача 2
+    function transform(str) {
+        const words = str.split('_');
+        const capitalizedWords = words.map(word => word[0].toUpperCase() + word.slice(1));
+        return capitalizedWords.join('');
+    }
+    console.log(transform('var_text_hello'));
+
+    // Задача 3
+    function fillArray() {
+        const arr = [];
+        for (let i = 0; i < 10; i++) {
+            arr.push('x');
+        }
+        return arr;
+    }
+    console.log(fillArray());
+
+    // Задача 4
+    function outputOneOrTwo(a) {
+        if (a > 0) {
+            return function ggg() {
+                console.log('one!');
+            };
+        } else {
+            return function ggg() {
+                console.log('two!');
+            };
+        }
+    }
+    outputOneOrTwo(-3)();
+
+    // Задача 5
+    function calculate(func1, func2) {
+        return func1() + func2();
+    }
+    console.log(calculate(() => 3, () => 4));
+
+    // Задача 6
+    function areArraysEqual(arr1, arr2) {
+        if (arr1.length !== arr2.length) {
+            return false;
+        }
+        for (let i = 0; i < arr1.length; i++) {
+            if (arr1[i] !== arr2[i]) {
+                return false;
+            }
+        }
+        return true;
+    }
+    console.log(areArraysEqual([11, 29, 32], [11, 29, 32]));
+
+    // Задача 7
+    function chunkArray(arr, size) {
+        const result = [];
+        for (let i = 0; i < arr.length; i += size) {
+            result.push(arr.slice(i, i + size));
+        }
+        return result;
+    }
+    console.log(chunkArray([1, 2, 3, 4, 5, 11, 29, 32, 4, 5], 3));
+</script>
+
+</body>
+</html>
